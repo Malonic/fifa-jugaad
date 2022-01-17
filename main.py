@@ -159,6 +159,11 @@ def game():
 
                         '''for increasing the value of 'p' (variable which dcides the amount by which ball 
                         moves left / the speed of going right decreases when user enters correct answer)'''
+                if event.key == K_ESCAPE:
+                    mixer.music.stop()
+                    mixer.music.load('start_music.mp3')
+                    mixer.music.play()
+                    running = False
 
         # for making the ball move left/right.
         iconX += (0.52 - p)
