@@ -220,7 +220,7 @@ def game():
                     running = False
 
         # for making the ball move left/right.
-        iconX += (0.05 - p) * d
+        iconX += (0.05*d)-p
 
         # for making background green
         screen.fill((0, 255, 0))
