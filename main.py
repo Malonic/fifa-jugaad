@@ -294,7 +294,7 @@ def instructions():
                   screen, 20, 420)
         draw_text("Pro tip: Press esc to go to main menu.", font2, (255, 255, 255), screen, 400, 550)
 
-        # setting up the exit machanism
+        # setting up the exit mechanism
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
@@ -322,7 +322,7 @@ def credits():
                   font2, (255, 255, 255), screen, 20, 100)
         draw_text("Pro tip: Press esc to go to main menu.", font2, (255, 255, 255), screen, 400, 550)
 
-        # making the exit machanism
+        # making the exit mechanism
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
