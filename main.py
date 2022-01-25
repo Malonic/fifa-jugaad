@@ -100,15 +100,15 @@ def difficulty():
         # making the buttons perform functions which run different things like the main game, instructions and credits
         if button_1.collidepoint((mx, my)):
             if click:
-                d = 1
+                d = 0.75
                 game()
         if button_2.collidepoint((mx, my)):
             if click:
-                d = 1.75
+                d = 1.25
                 game()
         if button_3.collidepoint((mx, my)):
             if click:
-                d = 2.75
+                d = 2
                 game()
         if button_4.collidepoint((mx, my)):
             if click:
@@ -220,7 +220,7 @@ def game():
                     running = False
 
         # for making the ball move left/right.
-        iconX += (0.05*d)-p
+        iconX += (0.05) * d - p
 
         # for making background green
         screen.fill((0, 255, 0))
@@ -250,7 +250,7 @@ def game():
         else:
             bye = base_font.render("YOU LOST", True, (0, 0, 0))
             screen.blit(bye, (0, 20))
-            draw_text("Pro tip: Press esc to go to main menu.", font2, (0, 0, 0), screen, 10, 80)
+            draw_text("Pro tip: Press esc (x2) to go to main menu.", font2, (0, 0, 0), screen, 10, 80)
             mixer.music.fadeout(50)
             mixer.music.load('start_music.mp3')
             mixer.music.set_volume(0.2)
@@ -267,29 +267,32 @@ def instructions():
         screen.fill((0, 0, 0))
 
         # printing the instructions using the draw_text function defined earlier
-        draw_text("Instructions: ", font1, (255, 0, 0), screen, 20, 20)
-        draw_text("I) This is basically a twist on the world famous game \"Football\".", font1, (255, 0, 0), screen, 20,
-                  60)
+        draw_text("Instructions: ", font1, (255, 255, 255), screen, 20, 20)
+        draw_text("I) This is basically a twist on the world famous game \"Football\".", font1, (255, 255, 255), screen,
+                  20, 60)
         draw_text("II) Here the ball by default moves towards our goal (computer is winning) with a constant speed.",
-                  font1, (255, 0, 0), screen, 20, 100)
+                  font1, (255, 255, 255), screen, 20, 100)
         draw_text(
             "III) The user needs to solve simple arithmetic problems to slow down the ball and towards the computer's goal.",
-            font1, (255, 0, 0), screen, 20, 140)
+            font1, (255, 255, 255), screen, 20, 140)
         draw_text("IV) Problems will be flashed on the screen and the user needs to solve them as fast as possible.",
-                  font1, (255, 0, 0), screen, 20, 180)
-        draw_text("V) The user has to type the answer and then press space bar.", font1, (255, 0, 0), screen, 20, 220)
+                  font1, (255, 255, 255), screen, 20, 180)
+        draw_text("V) The user has to type the answer and then press space bar.", font1, (255, 255, 255), screen, 20,
+                  220)
         draw_text(
             "VI) If the answer is correct the rate of going right of the ball will get reduced and eventually the ball will move left.",
-            font1, (255, 0, 0), screen, 20, 260)
+            font1, (255, 255, 255), screen, 20, 260)
         draw_text(
             "VII) If the answer is wrong then FALSE will be printed which the user has to manually remove by pressing backspace.",
-            font1, (255, 0, 0), screen, 20, 300)
+            font1, (255, 255, 255), screen, 20, 300)
         draw_text(
             "VIII) The more the user solves questions correctly , faster will the ball move left (into computer's goal).",
-            font1, (255, 0, 0), screen, 20, 340)
+            font1, (255, 255, 255), screen, 20, 340)
         draw_text("IX) If the user gets a question wrong, the speed of movement towards left gets slower.", font1,
-                  (255, 0, 0), screen, 20, 380)
-        draw_text("Pro tip: Press esc to go to main menu.", font2, (255, 0, 0), screen, 400, 550)
+                  (255, 255, 255), screen, 20, 380)
+        draw_text("X) Choose the difficulty wisely, greater the risk, greater the reward.", font1, (255, 255, 255),
+                  screen, 20, 420)
+        draw_text("Pro tip: Press esc to go to main menu.", font2, (255, 255, 255), screen, 400, 550)
 
         # setting up the exit machanism
         for event in pygame.event.get():
@@ -312,12 +315,12 @@ def credits():
         screen.fill((0, 0, 0))
 
         # printing the credits using the draw_text function defined earlier
-        draw_text("Credits: ", font2, (255, 0, 0), screen, 20, 20)
-        draw_text("This game was made by Aditya Banka and Archit Choudhary of class XI- G. ", font2, (255, 0, 0),
+        draw_text("Credits: ", font2, (255, 255, 255), screen, 20, 20)
+        draw_text("This game was made by Aditya Banka and Archit Choudhary of class XI- G. ", font2, (255, 255, 255),
                   screen, 20, 60)
         draw_text("It took us a lot of time to make this so please give us a good rating if you are able to see this!",
-                  font2, (255, 0, 0), screen, 20, 100)
-        draw_text("Pro tip: Press esc to go to main menu.", font2, (255, 0, 0), screen, 400, 550)
+                  font2, (255, 255, 255), screen, 20, 100)
+        draw_text("Pro tip: Press esc to go to main menu.", font2, (255, 255, 255), screen, 400, 550)
 
         # making the exit machanism
         for event in pygame.event.get():
